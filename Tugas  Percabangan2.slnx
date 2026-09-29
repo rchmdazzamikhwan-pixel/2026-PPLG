@@ -1,3 +1,98 @@
-<Solution>
-  <Project Path="Tugas  Percabangan2/Tugas  Percabangan2.csproj" />
-</Solution>
+using System;
+
+namespace PercabanganDasar
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int buku1 = 100;
+            int buku2 = 200;
+            int buku3 = 300;
+            int pulpen1 = 500;
+            int pulpen2 = 500;
+
+            int totalBelanja;
+            int barangDiskon;
+            double diskon;
+            double potongan;
+            double totalBayar;
+
+            double mtk;
+            double bing;
+            double pilihan;
+            double totalTka;
+            double nilai30;
+            double utbk;
+
+            Console.WriteLine(" belanja ");
+
+            totalBelanja = buku1 + buku2 + buku3 + pulpen1 + pulpen2;
+            barangDiskon = buku2 + buku3 + pulpen1 + pulpen2;
+
+            if (totalBelanja > 1000)
+            {
+                diskon = 20;
+            }
+            else if (totalBelanja >= 700)
+            {
+                diskon = 10;
+            }
+            else
+            {
+                diskon = 0;
+            }
+
+            potongan = barangDiskon * diskon / 100;
+            totalBayar = totalBelanja - potongan;
+
+            Console.WriteLine("Total belanja = " + totalBelanja);
+            Console.WriteLine("Diskon = " + potongan);
+            Console.WriteLine("Total bayar = " + totalBayar);
+
+            Console.WriteLine();
+            Console.WriteLine("mASUK ITS");
+
+            Console.Write("Nilai Matematika:");
+            mtk = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Nilai Bahasa Inggris:");
+            bing = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Nilai Bahasa Mandarin:");
+            pilihan = Convert.ToDouble(Console.ReadLine());
+
+            totalTka = mtk + bing + pilihan;
+
+            Console.WriteLine("Total nilai tKA =" + totalTka);
+
+            if (totalTka >= 280)
+            {
+                Console.WriteLine("Jalur Prestasi = BISA");
+            }
+            else
+            {
+                Console.WriteLine("Jalur Prestasi = BeLUM BISA");
+                Console.WriteLine("Kurang = " + (280 - totalTka));
+            }
+
+            nilai30 = totalTka * 30 / 100;
+            utbk = 600 - nilai30;
+
+            Console.WriteLine();
+            Console.WriteLine("JALUR UTBK ");
+            Console.WriteLine("Nilai TKA 30% = " + nilai30);
+
+            if (utbk <= 0)
+            {
+                Console.WriteLine("Tidak membutuhkan nilai UTBK lagi");
+            }
+            else
+            {
+                Console.WriteLine("Nilai UTBK yang dibutuhkan = " + utbk);
+            }
+
+            
+        }
+    }
+}
